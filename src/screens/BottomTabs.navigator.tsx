@@ -12,6 +12,9 @@ export const BottomTabsNavigator: React.FC = () => {
   return (
     <BottomTabs.Navigator
       screenOptions={({ route }) => ({
+        headerTitleStyle: {
+          fontFamily: theme.fontFamilyRegular,
+        },
         tabBarActiveTintColor: theme.colorBlue,
         tabBarInactiveTintColor: theme.colorGrey,
         tabBarShowLabel: false,
@@ -41,7 +44,7 @@ export const BottomTabsNavigator: React.FC = () => {
       <BottomTabs.Screen
         name="Analytics"
         component={Analytics}
-        options={{ title: 'Fancy Analytics' }}
+        options={{ title: 'Fancy Graphs' }}
       />
     </BottomTabs.Navigator>
   );
