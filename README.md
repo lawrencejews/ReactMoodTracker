@@ -42,4 +42,14 @@ npm install react-native-svg
 };
 ```
 - Then run in the terminal `npx react-native link`
+- LayoutAnimation is enable by default on `ios` but experiemental on Android: Add code below to `App.tsx`
+```
+import { Platform, UIManager } from 'react-native';
+
+if (Platform.OS === 'android') {
+  if (UIManager.setLayoutAnimationEnabledExperimental) {
+    UIManager.setLayoutAnimationEnabledExperimental(true);
+  }
+}
+```
 
