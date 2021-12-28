@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, ImageBackground } from 'react-native';
 import { MoodPicker } from '../components/MoodPicker';
 import { useAppContext } from '../App.provider';
 
@@ -8,17 +8,20 @@ const imageUrl =
 
 export const Home: React.FC = () => {
   const appContext = useAppContext();
+
   return (
-    <View style={styles.container}>
-      <Image source={{ uri: imageUrl }} style={{ flex: 1 }} />
-      <View style={[StyleSheet.absoluteFill, { justifyContent: 'center' }]}>
-        <MoodPicker handleSelectMood={appContext.handleSelectMood} />
-      </View>
-    </View>
+    <ImageBackground style={styles.container} source={{ uri: imageUrl }}>
+      <MoodPicker handleSelectMood={appContext.handleSelectMood} />
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
+  square: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'lightgreen',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
